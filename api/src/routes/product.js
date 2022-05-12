@@ -2,7 +2,7 @@ const express = require("express");
 const { requireSignin, adminMiddleware } = require("../common-middleware");
 const {
   createProduct,
-  getProductsBySlug,
+  getProducts,
   getProductDetailsById,
 } = require("../controllers/product");
 const multer = require("multer");
@@ -25,11 +25,11 @@ router.post(
   "/product/create",
   requireSignin,
   adminMiddleware,
-  upload.array("productImage"),
+  // upload.array("productImage"),
   createProduct
 );
 
-router.get("/products/:slug", getProductsBySlug);
+router.get("/products/all", getProducts);
 router.get("/product/:productId", getProductDetailsById);
 
 module.exports = router;
