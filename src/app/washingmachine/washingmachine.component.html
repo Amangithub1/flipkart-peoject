@@ -1,0 +1,16 @@
+<div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div class="list" *ngFor="let washingMachine of washingMachines">
+		<div class="image-wrapper">
+			<img [src]="washingMachine.pic"/>
+    </div>
+			<div>
+				<div class="product-name">
+					{{washingMachine.name}} {{washingMachine.spinSpeed}}
+				</div>
+			
+			</div>
+			<div class="price">₹{{washingMachine.price}}</div>
+</div>
+
+</div>
+     

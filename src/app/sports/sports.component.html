@@ -1,0 +1,16 @@
+<div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div class="list" *ngFor="let sport of sports">
+		<div class="image-wrapper">
+			<img [src]="sport.pic"/>
+    </div>
+			<div>
+				<div class="product-name">
+					{{sport.name}} {{sport.color}}
+				</div>
+			
+			</div>
+			<div class="price">₹{{sport.price}}</div>
+</div>
+
+</div>
+     

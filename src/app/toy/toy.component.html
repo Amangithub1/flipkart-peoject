@@ -1,0 +1,16 @@
+<div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div class="list" *ngFor="let  toy of  toys ">
+		<div class="image-wrapper">
+			<img [src]="toy.pic"/>
+    </div>
+			<div>
+				<div class="product-name">
+					{{toy.name}} {{toy.color}}
+				</div>
+			
+			</div>
+			<div class="price">₹{{toy.price}}</div>
+</div>
+
+</div>
+     

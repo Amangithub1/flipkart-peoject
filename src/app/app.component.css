@@ -1,0 +1,70 @@
+
+
+.navbar {
+    height: 70px;
+    background-color: #3374FF;
+    color: white;
+    display: flex;
+}
+
+.navbar input {
+    height: 40px;
+    margin-left: 5px;
+    box-sizing: border-box;
+    width: 400px;
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+.navbar img {
+    height: 70px;
+    width: 100px;
+    margin-left: 15%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+}
+
+.navbar .icon1 {
+    margin-top: 25px;
+}
+
+.navbar .btn1 {
+    background-color: #3374FF;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 900;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.navbar .btn2 {
+    margin-left: 0px;
+    font-weight: 900;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.navbar1 {
+    height: 50px;
+    background-color: white;
+    color: black;
+    display: flex;
+    padding-left: 100px;
+}
+
+.icon {
+    color: gray;
+    padding-right: 30px;
+}
+
+.mobile, .MobileAcc, .speaker, .Computer, .washingMachine, .refrigerator, .airConditioner, .footWear, .bottomWear, .winterWear, .boyswatch, .ethnicWear, .sandal, .jwel, .watch, .cloth, .babyFootwear, .toy, .sofa, .bed, .clock, .sport, .book {
+    padding: 20px;
+    background-color: white;
+    height: 150px;
+    width: 350px;
+    display: inline-block;
+    margin-left: 50px;
+}

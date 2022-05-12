@@ -1,0 +1,94 @@
+.container{
+  width:600px;
+  height: 500px;
+  position: static;
+
+  }
+ .div1{
+  margin:0;
+  padding:0;
+  height: 500px;
+  width:240px;
+  position: absolute;
+  background-color:#3374FF; 
+}
+.div1 h1{
+  color:white;
+  font-size: 1.7em;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.div1 p{
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  font-family: garamond;
+  padding-left: 30px;
+
+}
+ .div2{
+
+  margin-left:240px;
+  padding:0;
+  height: 500px;
+  width: 360px;
+  background-color:white;
+  position: relative;
+
+}
+.div2 .input1{
+  padding-left:40px;
+  padding-top:30px;
+  width:80%;
+}
+.div2 .input2{
+  padding-left:40px;
+  width:80%;
+}
+.div2 .btn1{
+  margin-left:40px;
+  padding:15px 123px;
+  margin-top: 15px;
+  background-color: #fb641b;
+  border:none;
+  outline:none;
+  color:white;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 16px;
+  box-shadow: gray;
+  margin-bottom: 200px;
+ 
+}
+.btn1{
+  margin-left:15px;
+   width:100px;
+}
+.div2 .a1{
+    margin-left:65px;
+    color: #3374FF;
+    margin-top: 250px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+.div2 .a2{
+    color:#3374FF;
+    margin-top: 250px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+.container .div2 button{
+  width:100px;
+}
+
+
+
+
+
+
+

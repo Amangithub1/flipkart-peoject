@@ -1,0 +1,36 @@
+<div *ngIf="isLogin" class="container">
+	<div class="div1">
+		<h1>Login</h1>
+		<p>Get access to your Orders, Wishlist and Recommendations</p>
+	</div>
+	<div class="div2">
+		<mat-form-field class="input1">
+			<input matInput placeholder="Enter Email">
+    </mat-form-field>
+			<mat-form-field class="input2">
+				<input matInput placeholder="Enter Password">
+    </mat-form-field>
+				<button class="btn1">Login</button>
+				<button class="a1" (click)=reg()>New to Flipkart?Create an account</button>
+			
+	</div>
+</div>
+	<div *ngIf="!isLogin" class="container">
+		<div class="div1">
+			<h1>Register</h1>
+			<p>We do not share your personal details with anyone.</p>
+		</div>
+
+		<div class="div2">
+			<mat-form-field class="input1">
+				<input matInput placeholder="Enter Email">
+    </mat-form-field>
+
+				<button class="btn1">CONTINUE</button>
+				<button class="a1" (click)="isLogin = !isLogin" >Existing User?Login</button>
+		</div>
+
+	</div>
+	<!-- <div *ngIf="!isLogin">
+	<app-register></app-register> -->
+

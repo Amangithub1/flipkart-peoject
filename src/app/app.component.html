@@ -1,0 +1,98 @@
+<nav class="navbar">
+	<img src="https://couponcode-images.s3-ap-southeast-1.amazonaws.com/public/shop/240.jpg">
+	<input type="text" placeholder="Search for products,brands and more"  >
+	<mat-icon aria-hidden="false" class="icon1" aria-label="Example home icon">search</mat-icon>
+	<button  class="btn1" (click)="openDialog()">Login & Signup</button>
+
+	<button class="btn2" mat-button [matMenuTriggerFor]="menu">More<mat-icon class="icon2">keyboard_arrow_down</mat-icon></button>
+
+	<mat-menu #menu="matMenu">
+		<button mat-menu-item><mat-icon>notifications</mat-icon>Notification Preferences</button>
+		<button mat-menu-item> <mat-icon>shop</mat-icon>Sell On Flipkart</button>
+		<button mat-menu-item><mat-icon>help</mat-icon>24*7 Customer Care</button>
+		<button mat-menu-item> <mat-icon>trending_up</mat-icon>Advertise</button>
+		<button mat-menu-item><mat-icon>cloud_download</mat-icon>Download App</button>
+	</mat-menu>
+	<!-- <button routerLink="cart" class="btn btn-primary">
+		<i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+		<div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+	</button> -->
+
+</nav>
+<nav class="navbar1">
+	<button mat-button [matMenuTriggerFor]="menu1">Electronics
+  <mat-icon class="icon">keyboard_arrow_down</mat-icon></button>
+	<mat-menu #menu1="matMenu" yPosition="above">
+		<button routerLink="/" mat-menu-item>Mobiles </button>
+		<button routerLink="/mobile-accessories" mat-menu-item>Mobile Accessories</button>
+		<button routerLink="/speaker" mat-menu-item>Speaker </button>
+		<button routerLink="/computer-accessories" mat-menu-item>Computer Accessories</button>
+
+	</mat-menu>
+
+	<button mat-button [matMenuTriggerFor]="menu2">TV&Appliances
+  <mat-icon class="icon">keyboard_arrow_down</mat-icon></button>
+	<mat-menu #menu2="matMenu" yPosition="below">
+		<button routerLink="/washing-machine" mat-menu-item>Washing Machine </button>
+		<button routerLink="/refrigerator" mat-menu-item>Refrigerator</button>
+		<button routerLink="/airconditioner" mat-menu-item>Air Conditioner</button>
+
+	</mat-menu>
+
+	<button mat-button [matMenuTriggerFor]="menu3">Men
+  <mat-icon class="icon">keyboard_arrow_down</mat-icon></button>
+	<mat-menu #menu3="matMenu" xPosition="before">
+		<button routerLink="/footwear" mat-menu-item>Foot Wear</button>
+		<button routerLink="/bottomwear" mat-menu-item>Bottom Wear</button>
+		<button  routerLink="/winterwear" mat-menu-item>Winter Wear</button>
+		<button  routerLink="/boyswatch" mat-menu-item>Watches</button>
+
+	</mat-menu>
+
+
+	<button mat-button [matMenuTriggerFor]="menu4">Women
+  <mat-icon class="icon">keyboard_arrow_down</mat-icon></button>
+	<mat-menu #menu4="matMenu" xPosition="after">
+		<button  routerLink="/ethnic-wear" mat-menu-item>Ethnic Wear</button>
+		<button routerLink="/sandal"mat-menu-item>Sandals</button>
+		<button routerLink="/jwellery" mat-menu-item>Jwellerry</button>
+		<button routerLink="/watch" mat-menu-item>Watches</button>
+	</mat-menu>
+	<button mat-button [matMenuTriggerFor]="menu5">Baby&Kids
+  <mat-icon class="icon">keyboard_arrow_down</mat-icon></button>
+	<mat-menu #menu5="matMenu" yPosition="above">
+		<button routerLink="/cloth" mat-menu-item>clothing</button>
+		<button routerLink="/babywootwear" mat-menu-item>babyFootwear</button>
+		<button routerLink="/toy" mat-menu-item>Toys</button>
+
+	</mat-menu>
+
+	<button mat-button [matMenuTriggerFor]="menu6">Home&Furniture
+  <mat-icon class="icon">keyboard_arrow_down</mat-icon></button>
+	<mat-menu #menu6="matMenu" yPosition="below">
+		<button routerLink="/sofa" mat-menu-item>Sofa</button>
+		<button routerLink="/bed" mat-menu-item>Bed</button>
+		<button routerLink="/clock" mat-menu-item>clock</button>
+
+	</mat-menu>
+
+	<button mat-button [matMenuTriggerFor]="menu7">Sports,Books&More
+  <mat-icon class="icon">keyboard_arrow_down</mat-icon></button>
+	<mat-menu #menu7="matMenu" xPosition="before">
+		<button routerLink="/sports" mat-menu-item>Sports</button>
+		<button routerLink="/book" mat-menu-item>books</button>
+
+	</mat-menu>
+
+
+	<button mat-button [matMenuTriggerFor]="menu8">Offer Zone
+  <mat-icon class="icon">keyboard_arrow_down</mat-icon></button>
+	<mat-menu #menu8="matMenu" xPosition="after">
+		<button mat-menu-item>Item 1</button>
+		<button mat-menu-item>Item 2</button>
+		<button mat-menu-item>Item 1</button>
+		<button mat-menu-item>Item 2</button>
+	</mat-menu>
+</nav>
+
+<router-outlet></router-outlet>

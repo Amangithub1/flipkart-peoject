@@ -1,0 +1,15 @@
+<div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div class="list" *ngFor="let watch of watches">
+		<div class="image-wrapper">
+			<img [src]="watch.pic"/>
+    </div>
+			<div>
+				<div class="product-name">
+					{{watch.name}} {{watch.color}}
+				</div>
+
+			</div>
+			<div class="price">₹{{watch.price}}</div>
+		</div>
+
+	</div>

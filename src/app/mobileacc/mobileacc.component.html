@@ -1,0 +1,19 @@
+<div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div class="list" *ngFor="let mobileAcc of mobileAccs">
+		<div class="image-wrapper">
+			<img [src]="mobileAcc.pic"/>
+    </div>
+			<div>
+				<div class="product-name">
+					{{mobileAcc.name}} {{mobileAcc.color}}
+				</div>
+				<ul>
+					<li *ngFor="let desc of mobileAcc.desc">
+						{{desc}}
+					</li>
+				</ul>
+			</div>
+			<div class="price">₹{{mobileAcc.price}}</div>
+</div>
+
+</div>

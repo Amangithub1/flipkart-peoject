@@ -1,0 +1,16 @@
+<div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div class="list" *ngFor="let  bottomWear of  bottomWears">
+		<div class="image-wrapper">
+			<img [src]="bottomWear.pic"/>
+    </div>
+			<div>
+				<div class="product-name">
+					{{bottomWear.name}} {{bottomWear.color}}
+				</div>
+			
+			</div>
+			<div class="price">₹{{bottomWear.price}}</div>
+</div>
+
+</div>
+     

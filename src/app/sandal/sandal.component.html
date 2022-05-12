@@ -1,0 +1,15 @@
+<div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div class="list" *ngFor="let sandal of sandals">
+		<div class="image-wrapper">
+			<img [src]="sandal.pic"/>
+    </div>
+			<div>
+				<div class="product-name">
+					{{sandal.name}} {{sandal.color}}
+				</div>
+			
+			</div>
+			<div class="price">₹{{sandal.price}}</div>
+</div>
+
+</div>

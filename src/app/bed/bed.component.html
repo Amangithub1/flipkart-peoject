@@ -1,0 +1,15 @@
+<div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div class="list" *ngFor="let  bed of  beds">
+		<div class="image-wrapper">
+			<img [src]="bed.pic"/>
+    </div>
+			<div>
+				<div class="product-name">
+					{{bed.name}} {{bed.color}}
+				</div>
+			
+			</div>
+			<div class="price">₹{{bed.price}}</div>
+</div>
+
+</div>

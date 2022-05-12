@@ -1,0 +1,15 @@
+<div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
+	<div class="list" *ngFor="let clock of  clocks">
+		<div class="image-wrapper">
+			<img [src]="clock.pic"/>
+    </div>
+			<div>
+				<div class="product-name">
+					{{clock.name}} {{clock.color}}
+				</div>
+			
+			</div>
+			<div class="price">₹{{clock.price}}</div>
+</div>
+
+</div>
