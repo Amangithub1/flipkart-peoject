@@ -1,0 +1,6 @@
+{ 
+    "env": { 
+        "PORT" : "6000",
+      "JWT_SECRET": "Aman"
+      }
+    }
