@@ -22,6 +22,8 @@ import { BedComponent } from '../bed/bed.component';
 import { ClockComponent } from '../clock/clock.component';
 import { SportsComponent } from '../sports/sports.component';
 import { BookComponent } from '../book/book.component';
+import { IndexComponent } from "../admin/index/index.component";
+
 
 
 
@@ -118,5 +120,9 @@ export const routes: Routes = [
     path: 'book',
     component: BookComponent
   },
+  {
+    path: 'index',
+    component: IndexComponent
+  }
    
 ];
