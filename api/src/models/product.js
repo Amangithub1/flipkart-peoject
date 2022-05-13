@@ -21,15 +21,15 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     description: {
-      type: String,
+      type:Array,
       required: true,
-      trim: true,
     },
     offer: { type: Number },
     // productPictures: [{ img: { type: String } }],
-    productPictures:{
-      type: String,
+    pic:{
+       type: String,
       required: true,
+      unique: true,
     },
     reviews: [
       {

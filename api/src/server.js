@@ -49,8 +49,12 @@ app.use("/api", initalDataRoutes);
 app.use("/api", pageRoutes);
 
 // app.get("/", (req, res, next) => {
+//   res.render();
+// });
+
+// app.get("/", (req, res, next) => {
 //   res.status(200).json({
-//     message: "Hello from server",
+//     message: "Run from Angular",
 //   });
 // });
 
@@ -60,10 +64,10 @@ app.use("/api", pageRoutes);
 //   });
 // });
 
- app.listen(process.env.PORT || 5000, () => {
-   console.log(`Server is running on port ${process.env.PORT}`);
- });
+//  app.listen(process.env.PORT || 5000, () => {
+//    console.log(`Server is running on port ${process.env.PORT}`);
+//  });
 
-// app.listen(5000, () => {
-//   console.log(`Server is running on port 5000`);
-// });
+app.listen(6000, () => {
+  console.log(`Server is running on port 6000`);
+});

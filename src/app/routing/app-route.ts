@@ -22,6 +22,7 @@ import { BedComponent } from '../bed/bed.component';
 import { ClockComponent } from '../clock/clock.component';
 import { SportsComponent } from '../sports/sports.component';
 import { BookComponent } from '../book/book.component';
+import { TestComponent } from "../test/test.component";
 
 
 
@@ -118,5 +119,9 @@ export const routes: Routes = [
    {
     path: 'book',
     component: BookComponent
+  },
+  {
+    path: 'test',
+    component: TestComponent
   },
 ];

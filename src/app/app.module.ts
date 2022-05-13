@@ -36,6 +36,7 @@ import { BedComponent } from './bed/bed.component';
 import { ClockComponent } from './clock/clock.component';
 import { SportsComponent } from './sports/sports.component';
 import { BookComponent } from './book/book.component';
+import { TestComponent } from './test/test.component';
 
 
 
@@ -76,6 +77,7 @@ import { BookComponent } from './book/book.component';
     ClockComponent,
     SportsComponent,
     BookComponent,
+    TestComponent,
   ],
   entryComponents: [DialogOverviewComponent, RegisterComponent],
   bootstrap: [AppComponent],

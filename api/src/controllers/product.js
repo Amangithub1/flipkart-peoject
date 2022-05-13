@@ -5,16 +5,16 @@ const Category = require("../models/category");
 exports.createProduct = (req, res) => {
   // res.status(200).json({ message: "hello" });
   // res.status(200).json({ file: req.files, body: req.body });
-  const { name, price, description, category, quantity,productPictures, createdBy } = req.body;
-
-  console.log('product :'+req.body.productPictures);
+  const { name, price,description, category, quantity,pic, createdBy } = req.body;
+  console.log(req.body.description);
+  console.log('product :'+req.body.pic);
   const product = new Product({
     name: name,
     slug: slugify(name),
     price,
     quantity,
     description,
-    productPictures,
+    pic,
     category,
     createdBy: req.user._id,
   });
