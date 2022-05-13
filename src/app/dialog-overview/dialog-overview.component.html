@@ -22,12 +22,18 @@
 		</div>
 
 		<div class="div2">
-			<mat-form-field class="input1">
-				<input matInput placeholder="Enter Email">
-    </mat-form-field>
+			<!-- {{myform.value | json}} -->
+			<form novalidate [formGroup]="myform">
+				<mat-form-field class="input1">
+				<input id="firstname" type="text" formControlName="firstname" matInput placeholder="First Name"></mat-form-field>
+				<mat-form-field class="input1">
+				<input id="lastname" type="text" formControlName="lastname" matInput placeholder="Last Name"></mat-form-field>
+				<mat-form-field class="input1"><input id="email" type="email" formControlName="email" matInput placeholder="Enter Email"></mat-form-field>
+				<mat-form-field class="input1"><input id="password" type="password" formControlName="password" matInput placeholder="Password"></mat-form-field>-
 
-				<button class="btn1">CONTINUE</button>
+				<input (click)="Register()" type="button" value="Register" class="btn1">
 				<button class="a1" (click)="isLogin = !isLogin" >Existing User?Login</button>
+				</form>
 		</div>
 
 	</div>
