@@ -12,6 +12,14 @@ import { HttpClient } from '@angular/common/http';
 export class DialogOverviewComponent implements OnInit {
   isLogin  = true;
   //form: FormGroup;
+  loginform : FormGroup = new FormGroup(
+
+    {
+        email: new FormControl('',Validators.required),
+        password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)])
+    }
+  
+    );
   myform : FormGroup = new FormGroup(
 
   {   firstname: new FormControl('',Validators.required),
@@ -25,7 +33,8 @@ export class DialogOverviewComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.isLogin);
-  }
+    
+   }
 
   reg() {
     console.log('inside reg()'+this.isLogin);
@@ -59,5 +68,29 @@ fetchRes.then(res =>
   res.json()).then(d => {
       console.log(d)
   });
+}
+Login(){
+  console.log('Login');
+  const URL = 'api/signin'
+  console.log(this.loginform)
+  const data = 
+  {
+    'email': this.loginform.get('email').value,
+    'password': this.loginform.get('password').value
+  };
+// Send a post request
+
+let fetchRes=fetch(URL, {
+ method: "POST",
+ body: JSON.stringify(data),
+ headers: {
+    "Content-type": "application/json; charset=UTF-8"
+ }
+});
+
+fetchRes.then(res =>
+res.json()).then(d => {
+    console.log(d)
+});
 }
 }

@@ -37,6 +37,7 @@ import { ClockComponent } from './clock/clock.component';
 import { SportsComponent } from './sports/sports.component';
 import { BookComponent } from './book/book.component';
 import { TestComponent } from './test/test.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -79,6 +80,7 @@ import { TestComponent } from './test/test.component';
     SportsComponent,
     BookComponent,
     TestComponent,
+    FooterComponent,
   ],
   entryComponents: [DialogOverviewComponent, RegisterComponent],
   bootstrap: [AppComponent],

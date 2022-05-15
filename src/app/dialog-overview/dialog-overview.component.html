@@ -4,15 +4,17 @@
 		<p>Get access to your Orders, Wishlist and Recommendations</p>
 	</div>
 	<div class="div2">
+		<!-- {{loginform.value | json}} -->
+		<form novalidate [formGroup]="loginform">
 		<mat-form-field class="input1">
 			<input matInput placeholder="Enter Email">
     </mat-form-field>
 			<mat-form-field class="input2">
 				<input matInput placeholder="Enter Password">
     </mat-form-field>
-				<button class="btn1">Login</button>
+				<input (click)="Login()" type="button" value="Login" class="btn1">
 				<button class="a1" (click)=reg()>New to Flipkart?Create an account</button>
-			
+			</form>	
 	</div>
 </div>
 	<div *ngIf="!isLogin" class="container">

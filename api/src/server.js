@@ -18,9 +18,22 @@ env.config();
 
 // mongodb
 
-mongoose
+// mongoose
+//   .connect(
+//     `mongodb://localhost:27017/flipkart`,
+//     {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//       useCreateIndex: true,
+//     }
+//   )
+//   .then(() => {
+//     console.log("Database connected");
+//   });
+
+  mongoose
   .connect(
-    `mongodb://localhost:27017/flipkart`,
+    "mongodb+srv://aman_asthana:Thisislove@cluster0.rqowd.mongodb.net/flipkart?ssl=true&authsource=admin&retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
