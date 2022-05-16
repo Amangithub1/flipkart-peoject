@@ -37,9 +37,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "main": "index.js",
-    "api": "nodemon api/src/server.js"
-  },
+    "main": "index.js"
+    },
   "license": "MIT",
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.1",
