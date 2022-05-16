@@ -1,6 +1,7 @@
 const Product = require("../models/product");
 const slugify = require("slugify");
 const Category = require("../models/category");
+const category = require("../models/category");
 
 exports.createProduct = (req, res) => {
   // res.status(200).json({ message: "hello" });
@@ -61,6 +62,7 @@ exports.getProducts = (req, res) => {
 
 exports.getProductDetailsById = (req, res) => {
   const { productId } = req.params;
+  console.log('getProductDetailsById method '+productId);
   if (productId) {
     Product.findOne({ _id: productId }).exec((error, product) => {
       if (error) return res.status(400).json({ error });
@@ -69,6 +71,50 @@ exports.getProductDetailsById = (req, res) => {
       }
     });
   } else {
+    return res.status(400).json({ error: "Params required" });
+  }
+};
+
+exports.getAllProductByCategoryId = (req, res) => {
+  console.log("getAllProductByCategoryId req "+req.query.categoryID)
+  const { categoryID } = req.body;
+  console.log("getAllProductByCategoryId  "+categoryID)
+  if (catId) {
+    Category.findOne({ _id:catId }).exec((error, category) => {
+      if (error) return res.status(400).json({ error });
+      if (category) {
+        res.status(200).json({ category });
+      }
+    });
+  } else {
+    return res.status(400).json({ error: "Params required" });
+  }
+};
+
+exports.getAllProductByCategoryName = (req, res) => {
+  const { categoryName }= req.body;
+  console.log('getAllProductByCategoryName : '+req.body.categoryName);
+  if(categoryName) {
+  Category.findOne( { name : categoryName }).exec((error, mycategory) => 
+  {
+    if (error) return res.status(400).json({ error });
+    if (mycategory)
+    {
+  console.log('getAllProductByCategoryName cat'+mycategory);
+  var ObjectId = require('mongoose').Types.ObjectId;
+  let id= ObjectId(mycategory._id);
+  console.log('categoryName'+id);
+    Product.find({ category : id  }).exec((error, product) => 
+    {
+      if (error) return res.status(400).json({ error });
+      if (product)
+      {
+        res.status(200).json({ product });
+      }
+    });
+  }
+});
+} else {
     return res.status(400).json({ error: "Params required" });
   }
 };

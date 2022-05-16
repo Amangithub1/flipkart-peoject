@@ -13,40 +13,103 @@ export class MobileComponent implements OnInit {
   constructor(private dataApi: DataApiService) {}
   
 
-  ngOnInit() {
-// API for get requests
-let fetchRes = fetch(
-  "/api/products/all");
-    
-          // fetchRes is the promise to resolve
-          // it by using.then() method
-          fetchRes.then(res =>
-              res.json()).then(d => {
-                  console.log(d)
-                  //let DataObj=JSON.parse(d);
-                  //console.log(DataObj)
-                  console.log(d.products)
-                  this.products=d.products
-                  let productsObj=d.products;
-                  productsObj.forEach(product => {
-                  console.log('prod name : ', product.name)
-                  console.log(product.description)
-                  let mob=
-                  {
-                    "pic":product.pic,
-                    "name":product.name,
-                    "color":product.color,
-                    "price":product.price,
-                    "desc":product.description
-                  }
-                  this.mobiles.push(mob)
-                  })
-                  console.log('mobile '+this.mobiles)
-                })
-
-  console.log("products : "+this.mobiles)
-    // this.mobiles = this.dataApi.getAllMobiles();
-    // console.log("mobile : "+this.dataApi.getMobileById(1))
-    
+  ngOnInit() 
+  {
+    console.log('ngOnInit');
+    let param: any ='Mobiles';
+    const URL = 'api/productBycategoryName'
+    console.log(URL);
+    const postData=
+    {
+      'categoryName':param
+    };
+    console.log(postData)
+    let responsePromise=my_async_fn(URL,'Mobiles');
+    console.log("response : "+responsePromise);
+    responsePromise.then(resObj => {
+      console.log("resObj "+resObj)
+      let productsArr=resObj.product;
+      productsArr.forEach(productObj => {
+      console.log('prod name : ', productObj.name)
+      console.log('prod name : ',productObj.description)
+      let mob=
+      {
+        "pic":productObj.pic,
+        "name":productObj.name,
+        "color":productObj.color,
+        "price":productObj.price,
+        "desc":productObj.description
+      }
+      console.log('mob obj : ',mob);
+      this.mobiles.push(mob);
+      })
+    })
+    console.log('mobiles list : '+this.mobiles);
+    // getMobile();
+   }
+}
+  async function my_async_fn(url,param) {
+    try{
+      const postData=
+      {
+        'categoryName':param
+      };
+      const settings = {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData)
+    };
+    let response = await fetch(url, settings);
+    console.log('my_async_fn '+response); // Logs the response
+    if (response.ok) 
+    {
+      //return json
+      let data=response.json();
+      console.log('my_async_fn if condition'+data);
+      return data
+  } else {
+      return null;
   }
 }
+    catch(e){
+      return e;
+    }
+    
+  }
+
+  function getMobile()
+  {
+    console.log('getMobile');
+    let param: any ='Mobiles';
+    const URL = 'api/productBycategoryName'
+    console.log(URL);
+    const postData=
+    {
+      'categoryName':param
+    };
+    console.log(postData)
+    let responsePromise=my_async_fn(URL,'Mobiles');
+    console.log("response : "+responsePromise);
+    responsePromise.then(resObj => {
+      console.log("resObj "+resObj)
+      let productsArr=resObj.product;
+      productsArr.forEach(productObj => {
+      console.log('prod name : ', productObj.name)
+      console.log('prod name : ',productObj.description)
+      let mob=
+      {
+        "pic":productObj.pic,
+        "name":productObj.name,
+        "color":productObj.color,
+        "price":productObj.price,
+        "desc":productObj.description
+      }
+      console.log('mob obj : ',mob);
+      this.mobiles.push(mob);
+      })
+    })
+    console.log('mobiles list : '+this.mobiles);
+  }

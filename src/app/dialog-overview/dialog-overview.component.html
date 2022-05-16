@@ -7,10 +7,10 @@
 		<!-- {{loginform.value | json}} -->
 		<form novalidate [formGroup]="loginform">
 		<mat-form-field class="input1">
-			<input matInput placeholder="Enter Email">
+			<input matInput placeholder="Enter Email" formControlName="email" type="email" id="email">
     </mat-form-field>
 			<mat-form-field class="input2">
-				<input matInput placeholder="Enter Password">
+				<input matInput placeholder="Enter Password" formControlName="password" type="password" id="password">
     </mat-form-field>
 				<input (click)="Login()" type="button" value="Login" class="btn1">
 				<button class="a1" (click)=reg()>New to Flipkart?Create an account</button>

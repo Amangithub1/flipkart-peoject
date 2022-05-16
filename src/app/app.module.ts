@@ -38,6 +38,7 @@ import { SportsComponent } from './sports/sports.component';
 import { BookComponent } from './book/book.component';
 import { TestComponent } from './test/test.component';
 import { FooterComponent } from './footer/footer.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -81,6 +82,7 @@ import { FooterComponent } from './footer/footer.component';
     BookComponent,
     TestComponent,
     FooterComponent,
+    ErrorComponent,
   ],
   entryComponents: [DialogOverviewComponent, RegisterComponent],
   bootstrap: [AppComponent],

@@ -11,7 +11,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DialogOverviewComponent implements OnInit {
   isLogin  = true;
-  //form: FormGroup;
   loginform : FormGroup = new FormGroup(
 
     {
@@ -67,8 +66,20 @@ let fetchRes=fetch(URL, {
 fetchRes.then(res =>
   res.json()).then(d => {
       console.log(d)
+      let respMesg=d.message;
+      if(respMesg==="User created successfully..")
+      {
+        window.location.href="index.html";
+      }
+      else
+      {
+        window.location.href="error.html";
+      }
   });
 }
+
+
+
 Login(){
   console.log('Login');
   const URL = 'api/signin'
@@ -91,6 +102,15 @@ let fetchRes=fetch(URL, {
 fetchRes.then(res =>
 res.json()).then(d => {
     console.log(d)
+    let token=d.token;
+    if(token)
+    {
+      window.location.href="index.html";
+    }
+    else
+    {
+      window.location.href="error.html";
+    }
 });
 }
 }

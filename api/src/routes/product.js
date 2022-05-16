@@ -4,6 +4,8 @@ const {
   createProduct,
   getProducts,
   getProductDetailsById,
+  getAllProductByCategoryName,
+  getAllProductByCategoryId
 } = require("../controllers/product");
 const multer = require("multer");
 const router = express.Router();
@@ -30,6 +32,8 @@ router.post(
 );
 
 router.get("/products/all", getProducts);
-router.get("/product/:productId", getProductDetailsById);
+router.get("/product/byId/:productId", getProductDetailsById);
+router.post("/productBycategoryName", getAllProductByCategoryName);
+router.get("/product/getAllProductByCategoryId/:categoryID", getAllProductByCategoryId);
 
 module.exports = router;
