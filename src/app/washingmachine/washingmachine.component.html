@@ -7,6 +7,11 @@
 				<div class="product-name">
 					{{washingMachine.name}} {{washingMachine.spinSpeed}}
 				</div>
+				<ul>
+					<li *ngFor="let desc of washingMachine.desc">
+						{{desc}}
+					</li>
+				</ul>
 			
 			</div>
 			<div class="price">₹{{washingMachine.price}}</div>
