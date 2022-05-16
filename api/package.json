@@ -4,7 +4,7 @@
   "description": "This is backend of flipkart clone",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/server.js"
+    "api": "nodemon ./src/server.js"
   },
   "license": "MIT",
   "dependencies": {
