@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dialog-overview.component.css']
 })
 export class DialogOverviewComponent implements OnInit {
-  isLogin  = true;
+  isLogin =true;
   loginform : FormGroup = new FormGroup(
 
     {
@@ -28,7 +28,9 @@ export class DialogOverviewComponent implements OnInit {
   }
 
   );
-  constructor(public fb: FormBuilder, private http: HttpClient) { }
+
+  constructor(public fb: FormBuilder, private http: HttpClient) {
+   }
 
   ngOnInit() {
     console.log(this.isLogin);
@@ -69,11 +71,12 @@ fetchRes.then(res =>
       let respMesg=d.message;
       if(respMesg==="User created successfully..")
       {
+        alert("You have sucessfully registered");
         window.location.href="index.html";
       }
       else
       {
-        window.location.href="error.html";
+        alert("User Already exists");
       }
   });
 }
@@ -99,16 +102,25 @@ let fetchRes=fetch(URL, {
  }
 });
 
+
 fetchRes.then(res =>
 res.json()).then(d => {
     console.log(d)
     let token=d.token;
     if(token)
     {
+      localStorage.setItem("userToken",token);
+      let usrObj=d.user;
+      let name=usrObj.fullName;
+      let id=usrObj._id;
+      console.log("nme"+name);
+      localStorage.setItem("userName",name);
+      localStorage.setItem("userId",id);
       window.location.href="index.html";
     }
     else
     {
+      alert("Wrong Credentials"); 
       window.location.href="error.html";
     }
 });

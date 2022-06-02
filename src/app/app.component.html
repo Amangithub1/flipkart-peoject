@@ -2,8 +2,14 @@
 	<a href="app.component.html"><img src="https://couponcode-images.s3-ap-southeast-1.amazonaws.com/public/shop/240.jpg"></a>
 	<input type="text" placeholder="Search for products,brands and more"  >
 	<mat-icon aria-hidden="false" class="icon1" aria-label="Example home icon">search</mat-icon>
+	<div *ngIf="isUser">
+		<span class="btn1">{{usr}}</span>
+		<button class="btn1" style="margin-left: 10px; margin-right: 10px;" (click)="logout()">Logout</button>
+	</div>
+	<div *ngIf="!isUser">
 	<button  class="btn1" (click)="openDialog()">Login & Signup</button>
-
+	</div>
+	<a style="color: white;" routerLink="/cart"><i _ngcontent-ftj-c1="" class="material-icons">shopping_cart</i>Cart</a>
 	<button class="btn2" mat-button [matMenuTriggerFor]="menu">More<mat-icon class="icon2">keyboard_arrow_down</mat-icon></button>
 
 	<mat-menu #menu="matMenu">

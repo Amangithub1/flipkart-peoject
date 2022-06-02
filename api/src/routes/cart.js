@@ -5,8 +5,6 @@ const router = express.Router();
 
 router.post(
   "/user/cart/addtocart",
-  requireSignin,
-  userMiddleware,
   addItemToCart
 );
 

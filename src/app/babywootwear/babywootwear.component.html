@@ -7,6 +7,11 @@
 				<div class="product-name">
 					{{babyFootwear.name}} {{babyFootwear.color}}
 				</div>
+				<ul>
+					<li *ngFor="let desc of babyFootwear.desc">
+						{{desc}}
+					</li>
+				</ul>
 			
 			</div>
 			<div class="price">₹{{babyFootwear.price}}</div>

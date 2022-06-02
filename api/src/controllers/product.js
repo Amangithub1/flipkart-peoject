@@ -118,3 +118,19 @@ exports.getAllProductByCategoryName = (req, res) => {
     return res.status(400).json({ error: "Params required" });
   }
 };
+
+
+exports.getAllProductById = (req, res) => {
+  const { prodId }= req.body;
+  console.log('getProductDetailsById method '+prodId);
+  if (prodId) {
+    Product.findOne({ _id: prodId }).exec((error, product) => {
+      if (error) return res.status(400).json({ error });
+      if (product) {
+        res.status(200).json({ product });
+      }
+    });
+  } else {
+    return res.status(400).json({ error: "Params required" });
+  }
+};

@@ -39,6 +39,9 @@ import { BookComponent } from './book/book.component';
 import { TestComponent } from './test/test.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
+import { CartComponent } from './cart/cart.component';
+//import { ShippingComponent } from './shipping/shipping.component';
+import { CartService } from "./cart.service";
 
 
 
@@ -83,9 +86,11 @@ import { ErrorComponent } from './error/error.component';
     TestComponent,
     FooterComponent,
     ErrorComponent,
+    CartComponent,
+    //ShippingComponent,
   ],
   entryComponents: [DialogOverviewComponent, RegisterComponent],
   bootstrap: [AppComponent],
-  providers: [DataService, DataApiService]
+  providers: [DataService, DataApiService, CartService]
 })
 export class AppModule {}

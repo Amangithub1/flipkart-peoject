@@ -42,6 +42,10 @@ exports.signin = (req, res) => {
     if (error) return res.status(400).json({ error });
 
     if (user) {
+      const auth=user.authenticate(req.body.password);
+      console.log('auth :'+auth);
+      // Get result from auth promise
+      
       if (user.authenticate(req.body.password) && user.role === "user") {
         const token = jwt.sign(
           { _id: user.id, role: user.role },

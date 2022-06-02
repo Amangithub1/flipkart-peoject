@@ -1,11 +1,15 @@
 <div style="margin: 15px; display:flex;flex-direction: column;" class="mat-elevation-z1">
 	<div class="list" *ngFor="let mobile of mobiles">
+		<form class="formStyle" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+			<input type="text" id="productId" name="productId" [hidden]="true" ngModel="{{mobile.id}}">
 		<div class="image-wrapper">
 			<img [src]="mobile.pic"/>
-    </div>
+			<input type="text" id="productImg" name="productImg" [hidden]="true" ngModel="{{mobile.pic}}">
+    	</div>
 			<div>
 				<div class="product-name">
 					{{mobile.name}} {{mobile.color}}
+					<input type="text" id="productName" name="productName" [hidden]="true" ngModel="{{mobile.name}}">
 				</div>
 				<ul>
 					<li *ngFor="let desc of mobile.desc">
@@ -13,8 +17,16 @@
 					</li>
 				</ul>
 			</div>
-			<div class="price">₹{{mobile.price}}</div>
-</div>
+			<div class="price">₹{{mobile.price}}
+				<input type="text" id="productPrice" name="productPrice" [hidden]="true" ngModel="{{mobile.price}}">
+			</div>
+			<div class="price">
+				<div class="form-group">
+					<button (click)="addToCart(products)" type="submit" style="background-color: #fb641b; color:white; border-radius: 10px; border-color: white; border-style: double;">Add To Cart</button>
+				</div>
+			</div>
+		</form>
+	</div>
 
 </div>
      

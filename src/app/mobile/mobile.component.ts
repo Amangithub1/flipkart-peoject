@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { DataApiService } from "../data-api.service";
+import { FormsModule,FormBuilder , FormGroup , ReactiveFormsModule,FormControl, Validators } from '@angular/forms';
+
+import { CartService } from "../cart.service";
 
 
 @Component({
@@ -7,11 +10,23 @@ import { DataApiService } from "../data-api.service";
   templateUrl: "./mobile.component.html",
   styleUrls: ["./mobile.component.css"]
 })
+
 export class MobileComponent implements OnInit {
   mobiles = [];
   products = [];
-  constructor(private dataApi: DataApiService) {}
-  
+  cart_items;
+  cart_qty;
+  mainForm : FormGroup = new FormGroup(
+    {
+        productId: new FormControl('',Validators.required),
+    }
+    );
+
+  constructor(private dataApi: DataApiService,
+    private formBuilder: FormBuilder, private cartService: CartService)
+     {
+  }
+
 
   ngOnInit() 
   {
@@ -34,6 +49,7 @@ export class MobileComponent implements OnInit {
       console.log('prod name : ',productObj.description)
       let mob=
       {
+        "id":productObj._id,
         "pic":productObj.pic,
         "name":productObj.name,
         "color":productObj.color,
@@ -47,7 +63,39 @@ export class MobileComponent implements OnInit {
     console.log('mobiles list : '+this.mobiles);
     // getMobile();
    }
+
+  onSubmit(customerData) {
+    // Process checkout data here
+    console.log('Mobile data ',customerData);
+    console.log('mainForm' + customerData.productId);
+    const prodId = customerData.productId;
+    console.log('id :',prodId);
+    console.log('local check',localStorage.getItem("products"));
+    if(localStorage.getItem("products") !=null)
+    {
+      var alreadyInCart=localStorage.getItem("products");
+      alreadyInCart=alreadyInCart+','+prodId;
+      console.log('alreadyInCart :',alreadyInCart);
+      localStorage.setItem(prodId,'1');
+    }
+    else
+    {
+      alreadyInCart=prodId;
+      console.log('alreadyInCart :',alreadyInCart);
+      localStorage.setItem(prodId,'1');
+    }
+    localStorage.setItem("products",alreadyInCart);
+    console.log('local :',localStorage.getItem("products"));
+    console.log('local :',localStorage.getItem(prodId));
+  }
+
+  addToCart(products) {
+    window.alert('Your product has been added to the cart!');
+    this.cartService.addToCart(products);
+  }
+
 }
+
   async function my_async_fn(url,param) {
     try{
       const postData=
@@ -113,3 +161,4 @@ export class MobileComponent implements OnInit {
     })
     console.log('mobiles list : '+this.mobiles);
   }
+

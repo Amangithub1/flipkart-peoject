@@ -23,6 +23,9 @@ import { ClockComponent } from '../clock/clock.component';
 import { SportsComponent } from '../sports/sports.component';
 import { BookComponent } from '../book/book.component';
 import { TestComponent } from "../test/test.component";
+import { CartComponent } from "../cart/cart.component";
+//import { ShippingComponent } from "../shipping/shipping.component";
+// import { Component } from "@angular/core";
 
 
 
@@ -124,4 +127,13 @@ export const routes: Routes = [
     path: 'test',
     component: TestComponent
   },
+  {
+    path: 'cart',
+    component: CartComponent
+  },
+  // {
+  //   path: 'shipping',
+  //   component: ShippingComponent
+  // },
+  
 ];

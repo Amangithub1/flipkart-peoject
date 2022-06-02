@@ -8,7 +8,11 @@
 					{{airConditioner.name}} 
           {{airConditioner.powerConsumption}}
 				</div>
-			
+				<ul>
+					<li *ngFor="let desc of airConditioner.desc">
+						{{desc}}
+					</li>
+				</ul>
 			</div>
 			<div class="price">₹{{airConditioner.price}}</div>
 </div>

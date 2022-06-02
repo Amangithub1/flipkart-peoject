@@ -1,0 +1,114 @@
+<div class="container-fluid">
+  <div class="row" style="padding: 15px;">
+      <form class="formStyle" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+        <div class="col-md-8">
+          <div class="row" style="display:block; text-align: center;background-color:  #3374ff;">
+            <h4 style="padding:10px;">My Cart</h4>
+          </div>
+            <div class="list" *ngFor="let product of buyproducts">
+              <input type="text" id="productId" formControlName="productId" name="productId" [hidden]="true" ngModel="{{product.id}}">
+              <div class="image-wrapper">
+                <img [src]="product.pic"/>
+              </div>
+                <div class="row">
+                  <div class="product-name">
+                  {{product.name}}
+                  </div>
+                </div>
+                <div class="price">₹{{product.price}}
+                  <input type="text" id="prod_price" formControlName="prod_price" name="prod_price" [hidden]="true" ngModel="{{product.price}}">
+                </div>
+                <div class="price">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="quantity" formControlName="quantity" value="1" style="max-width:70px ;" ngModel="{{product.quantity}}" (click)="update(checkoutForm.value)">
+                  </div>
+                  <!-- <div class="form-group">
+                    <button type="submit" (click)="onSubmit()" style="background-color: #fb641b; color:white; border-radius: 10px; border-color: white; border-style: double;"  >Add</button>
+                  </div> -->
+                </div>
+          </div>
+          <!-- <div class="cart-item">
+            <div class="list" *ngFor="let product of buyproducts">
+            	
+            <span>{{items.price}}</span>
+          </div>
+          </div> -->
+        </div>
+        <div class="col-md-4"  style="padding: 15px;background-color:  #e5e5e5">
+          <h5  style="padding:10px;">Price details</h5>
+            <div class="row">
+              <div class="col-md-8">
+                Name
+            </div>
+            <div class="col-md-4">
+                {{UserName}}
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                Price
+            </div>
+            <div class="col-md-4">
+                {{price}}
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                Delivery Charges
+            </div>
+            <div class="col-md-4">
+                FREE
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                Delivery Mode
+            </div>
+            <div class="col-md-4">
+                COD
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                  Total Amount
+              </div>
+              <div class="col-md-4">
+                {{total}}
+            </div>
+            </div>
+              <div class="form-group">
+                <label for="userAddress">Delivery address</label>
+                <input type="text" class="form-control" id="userAddress" formControlName="userAddress" aria-multiline="true" aria-describedby="AddressHelp" placeholder="Enter Delivery Address">
+                <small id="AddressHelp" class="form-text text-muted">We'll deliver your order here !</small>
+              </div>
+              <button type="submit" class="btn col-md-12" style="background-color: #fb641b; color:white; padding-top: 5px;padding-bottom: 5px;padding-left: 10px;padding-right: 10px; border-radius: 10px; border-color: white; border-style: double;">Submit</button>
+        </div>
+      </form>
+  </div>
+</div>
+<!-- <div class="row">
+  <div class="div2">
+  
+    <div class="row">
+        <label for="address">
+          Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+      <div class="row">
+      <button class="button" type="submit">Purchase</button>
+      </div>
+    
+  </div>
+</div> -->
+
+<!-- <p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p> -->
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+
